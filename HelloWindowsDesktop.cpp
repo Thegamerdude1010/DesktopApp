@@ -85,6 +85,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps;
 	HDC hdc;
 	TCHAR greeting[] = _T("Hello, Windows desktop!");
+        TCHAR greeting2[] =
+            _T(" How are you today? I am typing this to extend this sentence.");
 
 	switch (message)
 	{
@@ -97,6 +99,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		TextOut(hdc,
 			5, 5,
 			greeting, _tcslen(greeting));
+                TextOut(hdc, 5, 100, greeting2, _tcslen(greeting2));
+        
 		// End application-specific layout section.
 
 		EndPaint(hWnd, &ps);
@@ -111,3 +115,4 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 	return 0;
 }
+
